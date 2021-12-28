@@ -94,7 +94,6 @@ const ProductReviewSection = (props) => {
                         <div className = "product-actions">
                             <button className = "btn" onClick = {toggleReviewFormHandler}>Add review</button>
                         </div>
-                        
                     </div>
                     <div className = "divider"></div>
                     <div className = "product-reviews">
