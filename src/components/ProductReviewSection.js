@@ -35,7 +35,7 @@ const ProductReviewSection = (props) => {
             numberOfReviews += 1;
         }
         let avgRating = sumOfRating / numberOfReviews;
-        return avgRating;
+        return avgRating.toFixed(1);
     };
     const [showReviewForm, setShowReviewForm] = useState(false);
     const toggleReviewFormHandler = () => {
@@ -43,7 +43,7 @@ const ProductReviewSection = (props) => {
         setShowReviewForm(!previousVal);
     };
     const submitFormHandler = (review) => {
-        console.log(review);
+        //console.log(review);
         const previousProduct = product;
         previousProduct.reviews.push(review);
         setProduct(previousProduct);
