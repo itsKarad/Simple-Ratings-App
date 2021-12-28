@@ -18,6 +18,8 @@ Things I did not know before starting this project:
 - I have never worked with [socket.io](http://socket.io) before. I watched a few tutorials online to understand what it does and wrote a simple version to fulfill the feature mentioned (realtime updates to ratings).
 - I have also never made something from a Figma file before, due to which styling may seem inaccurate.
 
+Here's a YouTube video showing the realtime reviews feature: https://youtu.be/vu64ggj9x2U
+
 ## Tech Stack
 
 ### Backend
