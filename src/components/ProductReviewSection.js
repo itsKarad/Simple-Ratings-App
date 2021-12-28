@@ -47,6 +47,9 @@ const ProductReviewSection = (props) => {
         fetchReviews();  
     }, []); 
     const calculateAverageRating = (reviews) => {
+        if(!reviews || reviews.length === 0){
+            return "?";
+        }
         let sumOfRating = 0;
         let numberOfReviews = 0;
         for(let i = 0; i < reviews.length; i += 1){
