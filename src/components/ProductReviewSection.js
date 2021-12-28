@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './ProductReviewSection.css';
 import Review from './Review';
 import Reviews from './Reviews';
@@ -34,6 +34,11 @@ const ProductReviewSection = (props) => {
         }
         let avgRating = sumOfRating / numberOfReviews;
         return avgRating;
+    };
+    const [showReviewForm, setShowReviewForm] = useState(false);
+    const openReviewFormHandler = () => {
+        const previousVal = showReviewForm;
+        setShowReviewForm(!previousVal);
     }
     return (
         <div className="product-item">
@@ -46,7 +51,7 @@ const ProductReviewSection = (props) => {
                 </div>            
                 <div className = "product-rating-form">
                     <div className = "product-actions">
-                        <button class = "btn" onClick = {() => {}}>Add review</button>
+                        <button class = "btn" onClick = {openReviewFormHandler}>Add review</button>
                     </div>
                 </div>
                 
