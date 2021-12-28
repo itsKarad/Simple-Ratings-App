@@ -8,7 +8,9 @@ https://gumroad-challenge-karad.web.app
 ## Some notes
 
 - My commit history for this project is readable and incremental.
-- **Big architectural decision**.
+- **Big architectural decisions**:
+   1. Choosing to build the app with React from the beginning: Converting code from Vanilla JS to React to pretty tiring in my opinion.
+   2. Choosing NPM package like SocketIO instead of Firebase Realtime Database. Former is better suited for me because I am not familiar working with Firebase. I was also not familiar with SocketIO, but it was easier to learn due to my familiarity with NodeJS.
 - **Something I would do different next time around:** focus on making it pretty later and first build out the features.
 
 Things I did not know before starting this project:
