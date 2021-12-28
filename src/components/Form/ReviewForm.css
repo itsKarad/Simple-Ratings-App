@@ -1,0 +1,25 @@
+.review-form-container{
+    width: 80% !important;
+    margin: 8% auto;
+}
+.form-header{
+    font-size: 44px;
+    line-height: 52px;
+    font-weight: bold;
+}
+.form-heading{
+    font-size: 24px !important;
+    line-height: 28px !important;
+}
+
+textarea{
+    outline: none;
+    border: none;
+    font-family: Roboto;
+    font-size: 20px;
+    line-height: 23px;
+    color: #929292 !important;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 95%;
+}

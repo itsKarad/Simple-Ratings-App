@@ -38,7 +38,6 @@ const ProductReviewSection = (props) => {
     };
     const [showReviewForm, setShowReviewForm] = useState(false);
     const toggleReviewFormHandler = () => {
-        console.log("Toggling form");
         const previousVal = showReviewForm;
         setShowReviewForm(!previousVal);
     }
