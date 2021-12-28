@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Modal from './Form/Modal';
 import './ProductReviewSection.css';
-import Review from './Review';
 import Reviews from './Reviews';
 
 const ProductReviewSection = (props) => {
@@ -44,6 +43,13 @@ const ProductReviewSection = (props) => {
         previousProduct.reviews.push(review);
         setProduct(previousProduct);
         toggleReviewFormHandler();
+    }
+    if(error){
+        return (<div>
+            <h1>
+                Something went wrong while fetching the product.
+            </h1>
+        </div>)
     }
     if(isLoading){
         return (

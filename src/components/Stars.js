@@ -18,11 +18,15 @@ const Stars = (props) => {
 
     return (
         <div className = "stars-container">
-            <Star value = {1} active = {rating>=1} onClick = {starClickHandler}></Star>
-            <Star value = {2} active = {rating>=2} onClick = {starClickHandler}></Star>
-            <Star value = {3} active = {rating>=3} onClick = {starClickHandler}></Star>
-            <Star value = {4} active = {rating>=4} onClick = {starClickHandler}></Star>
-            <Star value = {5} active = {rating>=5} onClick = {starClickHandler}></Star>
+            {ARR.map((val) => {
+                return (
+                    <Star
+                        value = {val}
+                        active = {rating >= val}
+                        onClick = {starClickHandler}
+                    ></Star>
+                );
+            })}
         </div>
     );
 };
