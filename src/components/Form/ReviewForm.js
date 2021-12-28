@@ -1,5 +1,5 @@
 import React, {useRef, useState} from "react";
-import './ReviewForm.css';
+import styles from './ReviewForm.module.css';
 import Stars from "../Stars";
 
 const ReviewForm = (props) => {
@@ -17,18 +17,18 @@ const ReviewForm = (props) => {
     };
 
     return (
-        <div className="review-form-container">
-            <div className = "form-header">
+        <div className = {styles["review-form-container"]}>
+            <div className = {styles["form-header"]}>
                 What's your rating?
             </div>
-            <div className="form">
-                <div className = "form-rating">
-                    <p className = "form-heading">Rating</p>
+            <div className={styles["form"]}>
+                <div className = {styles["form-rating"]}>
+                    <p className = {styles["form-heading"]}>Rating</p>
                     <Stars allowInput = {true} onStarClick = {starClickHandler}></Stars>
                 </div>
-                <div className="form-review">
-                    <p className = "form-heading">Review</p>
-                    <div className = "form-review-container">
+                <div className={styles["form-review"]}>
+                    <p className = {styles["form-heading"]}>Review</p>
+                    <div className = {styles["form-review-container"]}>
                         <textarea 
                             ref = {reviewTextRef} 
                             placeholder = "Start typing..."
@@ -36,8 +36,8 @@ const ReviewForm = (props) => {
                     </div>
                 </div>
             </div>
-            <div className = "form-actions">
-                <button className = "btn" onClick = {submitReviewHandler}>Submit Review</button>
+            <div className = {styles["form-actions"]}>
+                <button className = {styles["btn"]} onClick = {submitReviewHandler}>Submit Review</button>
             </div>
         </div>
     );
