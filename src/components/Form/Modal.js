@@ -6,7 +6,7 @@ import ReviewForm from './ReviewForm';
 
 const Backdrop = (props) => {
     return (
-        <div className = "backdrop" onClick={props.onConfirm}>
+        <div className = "backdrop" onClick={props.onCancel}>
 
         </div>
     );
@@ -27,7 +27,7 @@ const Modal = (props) => {
         {
             props.show &&
             ReactDOM.createPortal(
-                <Backdrop></Backdrop>,
+                <Backdrop onCancel = {props.onCancel}></Backdrop>,
                 document.getElementById("backdrop-root")
             )
         }

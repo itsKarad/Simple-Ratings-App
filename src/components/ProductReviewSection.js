@@ -37,13 +37,14 @@ const ProductReviewSection = (props) => {
         return avgRating;
     };
     const [showReviewForm, setShowReviewForm] = useState(false);
-    const openReviewFormHandler = () => {
+    const toggleReviewFormHandler = () => {
+        console.log("Toggling form");
         const previousVal = showReviewForm;
         setShowReviewForm(!previousVal);
     }
     return (
         <React.Fragment>
-            <Modal show = {showReviewForm}></Modal>
+            <Modal show = {showReviewForm} onCancel = {toggleReviewFormHandler}></Modal>
             <div className="product-item">
                 <div class = "product-info">
                     <h1 className = "product-title">{DUMMY_PRODUCT.title}</h1>
@@ -54,7 +55,7 @@ const ProductReviewSection = (props) => {
                     </div>            
                     <div className = "product-rating-form">
                         <div className = "product-actions">
-                            <button class = "btn" onClick = {openReviewFormHandler}>Add review</button>
+                            <button class = "btn" onClick = {toggleReviewFormHandler}>Add review</button>
                         </div>
                     </div>
                     
