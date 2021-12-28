@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const connectDB = require("./db/connect-db");
+const Review = require("./models/review");
+const Product = require("./models/product");
+
 
 // Connecting database
 connectDB();
@@ -51,11 +54,17 @@ const DUMMY_PRODUCT = {
     ],
 };
 
-app.get("/", (req, res) => {
-    res.json({product: DUMMY_PRODUCT});
+app.get("/", async(req, res) => {
+    const products = await Product.find({}).populate("reviews");
+    const product = products[0];
+    // sending only one product
+    res.json({product: product});
 });
 
+app.post("/review", async(req, res) => {
+    const {review} = req.body;
 
+});
 
 const PORT = 8000;
 app.listen(PORT, (req, res) => {
