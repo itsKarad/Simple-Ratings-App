@@ -31,38 +31,31 @@ app.use((req, res, next) => {
     next();
 });
 
-const DUMMY_PRODUCT = {
-    id: "p1",
-    title: "The Minimalist Entrepreneur",
-    reviews: [
-        {
-            rating: 4,
-            text: "Very good",
-        },
-        {
-            rating: 1,
-            text: "Meh!",
-        },
-        {
-            rating: 4,
-            text: "Wow!",
-        },
-        {
-            rating: 4,
-            text: "Wow2!",
-        }
-    ],
-};
 
 app.get("/", async(req, res) => {
     const products = await Product.find({}).populate("reviews");
     const product = products[0];
     // sending only one product
-    res.json({product: product});
+    res.json({product: product.toObject({getters: true})});
 });
 
-app.post("/review", async(req, res) => {
-    const {review} = req.body;
+app.post("/add-review/:productID", async(req, res) => {
+    const productID = req.params.productID;
+    console.log(productID);
+    const {text, rating} = req.body;
+    console.log(req.body);
+    const newReview = new Review({
+        rating: rating,
+        text: text,
+    });
+    const foundProduct = await Product.findById(productID);
+    foundProduct.reviews.push(newReview);
+    await foundProduct.save();
+    await newReview.save();
+    res.json({
+        message: "Added review!"
+    });
+    
 
 });
 

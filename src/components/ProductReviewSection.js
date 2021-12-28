@@ -37,11 +37,25 @@ const ProductReviewSection = (props) => {
         const previousVal = showReviewForm;
         setShowReviewForm(!previousVal);
     };
-    const submitFormHandler = (review) => {
+    const submitFormHandler = async(review) => {
         //console.log(review);
         const previousProduct = product;
         previousProduct.reviews.push(review);
         setProduct(previousProduct);
+
+        // Send POST request to backend
+        const response = await fetch(`http://localhost:8000/add-review/${product.id}`, {
+            method: "POST",
+            body: JSON.stringify({
+                text: review.text,
+                rating: review.rating,
+            }),
+            headers:{
+                "Content-Type": "application/json"
+            }
+        });
+
+
         toggleReviewFormHandler();
     }
     if(error){
