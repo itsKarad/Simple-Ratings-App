@@ -7,14 +7,41 @@ const ProductReviewSection = (props) => {
         rating: 4,
         text: "Very good!",
     };
+    const DUMMY_PRODUCT = {
+        title: "The Minimalist Entrepreneur",
+        reviews: [
+            {
+                rating: 4,
+                text: "Very good",
+            },
+            {
+                rating: 1,
+                text: "Meh!",
+            },
+            {
+                rating: 4,
+                text: "Wow!",
+            }
+        ],
+    };
+    const calculateAverageRating = (reviews) => {
+        let sumOfRating = 0;
+        let numberOfReviews = 0;
+        for(let i = 0; i < reviews.length; i += 1){
+            sumOfRating += reviews[i].rating;
+            numberOfReviews += 1;
+        }
+        let avgRating = sumOfRating / numberOfReviews;
+        return avgRating;
+    }
     return (
         <div className="product-item">
             <div class = "product-info">
-                <h1 className = "product-title">The Minimalist Entrepreneur</h1>
+                <h1 className = "product-title">DUMMY_PRODUCT.title</h1>
             </div>
             <div className = "product-ratings">
                 <div className = "product-rating">
-                    {1.2}
+                    {calculateAverageRating(DUMMY_PRODUCT.reviews)}
                 </div>            
                 <div className = "product-rating-form">
                     <div className = "product-actions">
