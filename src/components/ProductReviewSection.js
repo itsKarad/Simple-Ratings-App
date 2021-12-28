@@ -57,6 +57,7 @@ const ProductReviewSection = (props) => {
             numberOfReviews += 1;
         }
         let avgRating = sumOfRating / numberOfReviews;
+        avgRating /= 2;
         return avgRating.toFixed(1);
     };
     const [showReviewForm, setShowReviewForm] = useState(false);
@@ -113,7 +114,7 @@ const ProductReviewSection = (props) => {
                                 {calculateAverageRating(product.reviews)}
                             </div>
                             <div className = "avg-stars">
-                                <Stars rating = {calculateAverageRating(product.reviews)}></Stars>
+                                <Stars rating = {calculateAverageRating(product.reviews)*2}></Stars>
                             </div>
                         </div>            
                         <div className = "product-actions">

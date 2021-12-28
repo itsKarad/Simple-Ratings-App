@@ -5,14 +5,21 @@ const GREY_STAR = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5
 const GOLD_STAR = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTciIGhlaWdodD0iMTciPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iYSIgeDE9IjUwJSIgeDI9IjUwJSIgeTE9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0ZGQ0M2OSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI0ZEQ0U3MSIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0iYyIgd2lkdGg9IjEwNS45JSIgaGVpZ2h0PSIxMDUuOSUiIHg9Ii0yLjklIiB5PSItMi45JSIgZmlsdGVyVW5pdHM9Im9iamVjdEJvdW5kaW5nQm94Ij48ZmVPZmZzZXQgZHk9IjEiIGluPSJTb3VyY2VBbHBoYSIgcmVzdWx0PSJzaGFkb3dPZmZzZXRJbm5lcjEiLz48ZmVDb21wb3NpdGUgaW49InNoYWRvd09mZnNldElubmVyMSIgaW4yPSJTb3VyY2VBbHBoYSIgazI9Ii0xIiBrMz0iMSIgb3BlcmF0b3I9ImFyaXRobWV0aWMiIHJlc3VsdD0ic2hhZG93SW5uZXJJbm5lcjEiLz48ZmVDb2xvck1hdHJpeCBpbj0ic2hhZG93SW5uZXJJbm5lcjEiIHJlc3VsdD0ic2hhZG93TWF0cml4SW5uZXIxIiB2YWx1ZXM9IjAgMCAwIDAgMC45NjA3ODQzMTQgMCAwIDAgMCAwLjk2MDc4NDMxNCAwIDAgMCAwIDAuOTYwNzg0MzE0IDAgMCAwIDAuNSAwIi8+PGZlT2Zmc2V0IGR5PSItMSIgaW49IlNvdXJjZUFscGhhIiByZXN1bHQ9InNoYWRvd09mZnNldElubmVyMiIvPjxmZUNvbXBvc2l0ZSBpbj0ic2hhZG93T2Zmc2V0SW5uZXIyIiBpbjI9IlNvdXJjZUFscGhhIiBrMj0iLTEiIGszPSIxIiBvcGVyYXRvcj0iYXJpdGhtZXRpYyIgcmVzdWx0PSJzaGFkb3dJbm5lcklubmVyMiIvPjxmZUNvbG9yTWF0cml4IGluPSJzaGFkb3dJbm5lcklubmVyMiIgcmVzdWx0PSJzaGFkb3dNYXRyaXhJbm5lcjIiIHZhbHVlcz0iMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMC4wNSAwIi8+PGZlTWVyZ2U+PGZlTWVyZ2VOb2RlIGluPSJzaGFkb3dNYXRyaXhJbm5lcjEiLz48ZmVNZXJnZU5vZGUgaW49InNoYWRvd01hdHJpeElubmVyMiIvPjwvZmVNZXJnZT48L2ZpbHRlcj48cGF0aCBpZD0iYiIgZD0iTTQ0NC45NCAxNTM5LjQxNWExLjA3NSAxLjA3NSAwIDAgMC0uODU1LS43MjJsLTQuNTcyLS43MDUtMi4wNDItNC4zODJhMS4xMTUgMS4xMTUgMCAwIDAtLjk3MS0uNjA2Yy0uNDE1IDAtLjc4LjI0OS0uOTcxLjYwNmwtMi4wNDIgNC4zODItNC41OTcuNzA1Yy0uMzc0LjA1OC0uNjk4LjM0LS44My43MjItLjEzMy4zNzQtLjA0Mi43OTcuMjQ5IDEuMDhsMy4zMzYgMy40MS0uNzk3IDQuODU1Yy0uMDU4LjM5OS4xMTYuNzk3LjQzMiAxLjA0NmExLjEwNSAxLjEwNSAwIDAgMCAxLjE0NS4wNThsNC4wNzUtMi4yNTcgNC4wNzUgMi4yNTdhMS4xMDUgMS4xMDUgMCAwIDAgMS4xNDUtLjA1OGMuMzE2LS4yNDkuNDktLjY0Ny40MzItMS4wNDZsLS43OTctNC44NTUgMy4zMzYtMy40MWMuMjktLjI4My4zODItLjcwNi4yNS0xLjA4eiIvPjwvZGVmcz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNDI4IC0xNTMzKSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48dXNlIGZpbGw9InVybCgjYSkiIHhsaW5rOmhyZWY9IiNiIi8+PHVzZSBmaWxsPSIjMDAwIiBmaWx0ZXI9InVybCgjYykiIHhsaW5rOmhyZWY9IiNiIi8+PC9nPjwvc3ZnPg==";
 const Star = (props) => {
 
-    const clickHandler = () => {
-        props.onClick(props.value);
+    const clickHandler = (id) => {
+        props.onClick(props.value + id);
     }
     return (
         <div className = "star-container">
-            <div onClick = {clickHandler} className = "star" style={{backgroundImage: `url(${props.active ? GOLD_STAR : GREY_STAR})`}}>
-                
+
+            <div className = "star-left" onClick = {() => {clickHandler(1)}} style={{backgroundImage: `url(${props.activeLeft ? GOLD_STAR : GREY_STAR})`}}>
+
             </div>
+            <div className = "star-right" onClick={() => {clickHandler(2)}} style={{backgroundImage: `url(${props.activeRight ? GOLD_STAR : GREY_STAR})`}}>
+
+            </div>
+            {/* <div onClick = {clickHandler} className = "star" style={{backgroundImage: `url(${props.active ? GOLD_STAR : GREY_STAR})`}}>
+                
+            </div> */}
         </div>
     )
 };

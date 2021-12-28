@@ -4,7 +4,7 @@ import Star from './Star';
 
 const Stars = (props) => {
     const [rating, setRating] = React.useState(props.rating);
-    const ARR = [ 1, 2, 3, 4, 5];
+    const ARR = [ 0, 1, 2, 3, 4];
 
     const starClickHandler = (val) => {
         if(!props.allowInput){
@@ -22,8 +22,9 @@ const Stars = (props) => {
                 return (
                     <Star
                         key = {val}
-                        value = {val}
-                        active = {rating >= val}
+                        value = {2*val}
+                        activeLeft = {rating >= 2*val + 1}
+                        activeRight = {rating >= 2*val + 2}
                         onClick = {starClickHandler}
                     ></Star>
                 );

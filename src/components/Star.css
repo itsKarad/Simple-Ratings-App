@@ -1,10 +1,24 @@
-.star{
-    height: 30px;
-    width: 30px;
-    background-repeat: no-repeat;
-    background-size: contain;
+.star-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
     margin: 5px;
+}
+.star-left{
+    height: 30px;
+    width: 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
     transform: translateY(0);
     transition: transform .35s cubic-bezier(.23,1.5,.32,1);
-    /* background: linear-gradient(180deg, #FFCD69 0%, #FDCE71 100%); */
+}
+.star-right{
+    height: 30px;
+    width: 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    transform: translateY(0);
+    transition: transform .35s cubic-bezier(.23,1.5,.32,1);
 }

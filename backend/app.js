@@ -19,11 +19,6 @@ const io = new Server(httpServer, {
 io.on("connection", (socket) => {
     let i=1;
     console.log("Connecting client with ID: " + socket.id);
-
-    // setInterval(() => {
-    //   i = i+2;
-    //   socket.emit("update", i);
-    // },1000)
     
 });
 
