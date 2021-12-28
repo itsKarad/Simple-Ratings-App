@@ -6,19 +6,10 @@ import './ProductReviewSection.css';
 import Reviews from './Reviews';
 import Stars from './Stars';
 
-const DUMMY_PRODUCT = {
-    title: "",
-    reviews: [
-        {
-            text: "",
-            rating: 0,
-        }
-    ],
-};
 
 const ProductReviewSection = (props) => {
     useEffect(() => {
-        const socket = io("http://localhost:8000");
+        const socket = io(process.env.REACT_APP_BACKEND_URL);
         socket.on("connect", () => {
             console.log("Connecting..." + socket.id);
         });
@@ -35,7 +26,7 @@ const ProductReviewSection = (props) => {
     useEffect(() => {
         const fetchReviews = async () => {
             setIsLoading(true);
-            const response = await fetch("http://localhost:8000");
+            const response = await fetch(process.env.REACT_APP_BACKEND_URL);
             if(!response.ok){
               setError("Cannot fetch reviews!");
             }
@@ -66,13 +57,8 @@ const ProductReviewSection = (props) => {
         setShowReviewForm(!previousVal);
     };
     const submitFormHandler = async(review) => {
-        //console.log(review);
-        // const previousProduct = product;
-        // previousProduct.reviews.push(review);
-        // setProduct(previousProduct);
-
         // Send POST request to backend
-        const response = await fetch(`http://localhost:8000/add-review/${product.id}`, {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/add-review/${product.id}`, {
             method: "POST",
             body: JSON.stringify({
                 text: review.text,

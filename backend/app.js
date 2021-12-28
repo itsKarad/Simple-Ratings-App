@@ -3,14 +3,17 @@ const app = express();
 const connectDB = require("./db/connect-db");
 const Review = require("./models/review");
 const Product = require("./models/product");
-
+const dotenv = require("dotenv");
 const { createServer } = require("http");
 const { Server } = require("socket.io");
 const httpServer = createServer(app);
 
+// Loading environmental variables
+dotenv.config({ path: "./config.env" });
+
 const io = new Server(httpServer, {
     cors: {
-      origin: "http://localhost:3000",
+      origin: process.env.FRONTEND_URL,
       methods: ["GET", "POST"]
     }
   }
@@ -78,9 +81,6 @@ app.post("/add-review/:productID", async(req, res) => {
 
 });
 
-const PORT = 8000;
-httpServer.listen(PORT);
-// app.listen(PORT, (req, res) => {
-//     console.log("Listening on PORT " + PORT);
 
-// });
+const PORT = process.env.PORT || 8080;
+httpServer.listen(PORT);
