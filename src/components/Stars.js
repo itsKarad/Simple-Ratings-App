@@ -21,6 +21,7 @@ const Stars = (props) => {
             {ARR.map((val) => {
                 return (
                     <Star
+                        key = {val}
                         value = {val}
                         active = {rating >= val}
                         onClick = {starClickHandler}

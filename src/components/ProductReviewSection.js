@@ -1,15 +1,37 @@
 import React, {useState, useEffect} from 'react';
+import { io } from "socket.io-client";
+
 import Modal from './Form/Modal';
 import './ProductReviewSection.css';
 import Reviews from './Reviews';
 import Stars from './Stars';
 
+const DUMMY_PRODUCT = {
+    title: "",
+    reviews: [
+        {
+            text: "",
+            rating: 0,
+        }
+    ],
+};
 
 const ProductReviewSection = (props) => {
+    useEffect(() => {
+        const socket = io("http://localhost:8000");
+        socket.on("connect", () => {
+            console.log("Connecting..." + socket.id);
+        });
+        socket.on("update", (prod) => {
+            console.log(prod);
+            setProduct(prod);
+        });
+    }, []);
+
     const [product, setProduct] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    
     useEffect(() => {
         const fetchReviews = async () => {
             setIsLoading(true);
@@ -41,9 +63,9 @@ const ProductReviewSection = (props) => {
     };
     const submitFormHandler = async(review) => {
         //console.log(review);
-        const previousProduct = product;
-        previousProduct.reviews.push(review);
-        setProduct(previousProduct);
+        // const previousProduct = product;
+        // previousProduct.reviews.push(review);
+        // setProduct(previousProduct);
 
         // Send POST request to backend
         const response = await fetch(`http://localhost:8000/add-review/${product.id}`, {

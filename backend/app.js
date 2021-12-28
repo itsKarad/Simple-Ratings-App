@@ -4,6 +4,28 @@ const connectDB = require("./db/connect-db");
 const Review = require("./models/review");
 const Product = require("./models/product");
 
+const { createServer } = require("http");
+const { Server } = require("socket.io");
+const httpServer = createServer(app);
+
+const io = new Server(httpServer, {
+    cors: {
+      origin: "http://localhost:3000",
+      methods: ["GET", "POST"]
+    }
+  }
+);
+
+io.on("connection", (socket) => {
+    let i=1;
+    console.log("Connecting client with ID: " + socket.id);
+
+    // setInterval(() => {
+    //   i = i+2;
+    //   socket.emit("update", i);
+    // },1000)
+    
+});
 
 // Connecting database
 connectDB();
@@ -48,10 +70,12 @@ app.post("/add-review/:productID", async(req, res) => {
         rating: rating,
         text: text,
     });
-    const foundProduct = await Product.findById(productID);
+    const foundProduct = await Product.findById(productID).populate("reviews");
     foundProduct.reviews.push(newReview);
     await foundProduct.save();
     await newReview.save();
+    // io.broadcast.emit();
+    io.emit("update", foundProduct.toObject({getters: true}));
     res.json({
         message: "Added review!"
     });
@@ -60,7 +84,8 @@ app.post("/add-review/:productID", async(req, res) => {
 });
 
 const PORT = 8000;
-app.listen(PORT, (req, res) => {
-    console.log("Listening on PORT " + PORT);
+httpServer.listen(PORT);
+// app.listen(PORT, (req, res) => {
+//     console.log("Listening on PORT " + PORT);
 
-});
+// });
