@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import Modal from './Form/Modal';
 import './ProductReviewSection.css';
 import Reviews from './Reviews';
+import Stars from './Stars';
+
 
 const ProductReviewSection = (props) => {
     const [product, setProduct] = useState(null);
@@ -54,7 +56,7 @@ const ProductReviewSection = (props) => {
                 "Content-Type": "application/json"
             }
         });
-
+        console.log(response);
 
         toggleReviewFormHandler();
     }
@@ -82,17 +84,19 @@ const ProductReviewSection = (props) => {
                     </div>
                     <div className = "product-ratings">
                         <div className = "product-rating">
-                            {calculateAverageRating(product.reviews)}
-                        </div>            
-                        <div className = "product-rating-form">
-                            <div className = "product-actions">
-                                <button className = "btn" onClick = {toggleReviewFormHandler}>Add review</button>
+                            <div className = "avg-rating">
+                                {calculateAverageRating(product.reviews)}
                             </div>
+                            <div className = "avg-stars">
+                                <Stars rating = {calculateAverageRating(product.reviews)}></Stars>
+                            </div>
+                        </div>            
+                        <div className = "product-actions">
+                            <button className = "btn" onClick = {toggleReviewFormHandler}>Add review</button>
                         </div>
                         
                     </div>
-                    <div className = "divider">
-                    </div>
+                    <div className = "divider"></div>
                     <div className = "product-reviews">
                         <h2 className = "reviews-header">Reviews</h2>
                         <Reviews reviews = {product.reviews}></Reviews>

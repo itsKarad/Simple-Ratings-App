@@ -1,12 +1,13 @@
 import React from "react";
 import Stars from "./Stars";
+import './Review.css';
 
 const Review = (props) => {
     return (
         <div className = "review-container">
             <Stars rating = {props.review.rating}></Stars>
             <div className = "review-text">
-                <p><strong>{props.review.rating}</strong>, <span className = "review-text-span">{props.review.text}</span></p>
+                <p><span className="strong-span">{props.review.rating}</span><span className = "review-text-span">, {props.review.text}</span></p>
             </div>
         </div>
     );

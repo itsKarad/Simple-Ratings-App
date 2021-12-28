@@ -1,17 +1,23 @@
 .product-ratings{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: start;
+    align-items: center;
 }
 
 .product-title{
     font-size: 44px;
     line-height: 52px;
+    margin: 0 auto;
+    margin-bottom: 43px;
 }
 .product-rating{
     font-size: 44px;
     font-size: 52px;
     font-weight: 400 !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
 }
 .btn{
     display: flex;
@@ -39,11 +45,18 @@
 .divider{
     border: 1px solid #B9B9B9;
     height: 0px;
-    margin-top: 7%;
-    margin-bottom: 7%;
+    margin-top: 57px;
+    margin-bottom: 41px;
 }
 .reviews-header{
     font-size: 28px;
     line-height: 33px;
     font-weight: 700px;
+    margin-bottom: 29px;
+}
+.avg-rating{
+    margin-right: 24px;
+}
+.avg-stars{
+    margin-right: 183px;
 }

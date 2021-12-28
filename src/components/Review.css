@@ -1,0 +1,22 @@
+.review-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.review-text-span{
+    color: #858585;
+    line-height: 23.44px;
+    font-weight: 400;
+    font-style: normal;
+}
+.review-text{
+    font-size: 20px;
+    line-height: 23.44px;
+    margin-left: 29px;
+    font-weight: 400;
+}
+.strong-span{
+    font-weight: 700;
+    font-style: normal;
+}
