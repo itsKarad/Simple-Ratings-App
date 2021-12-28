@@ -1,6 +1,6 @@
 # Gumroad Coding Question
 
-This is a submission by [Aditya Karad](https://twitter.com/itsKarad) for Gumroad’s [coding challenge](https://www.notion.so/Coding-challenge-f7aa85150edd41eeb3537aae4632619f).
+This is a submission by [Aditya Karad](https://twitter.com/itsKarad) for this [coding challenge](https://www.notion.so/Coding-challenge-f7aa85150edd41eeb3537aae4632619f).
 
 ## Live Demo
 https://gumroad-challenge-karad.web.app
