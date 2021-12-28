@@ -24,8 +24,31 @@ app.use((req, res, next) => {
     next();
 });
 
+const DUMMY_PRODUCT = {
+    id: "p1",
+    title: "The Minimalist Entrepreneur",
+    reviews: [
+        {
+            rating: 4,
+            text: "Very good",
+        },
+        {
+            rating: 1,
+            text: "Meh!",
+        },
+        {
+            rating: 4,
+            text: "Wow!",
+        },
+        {
+            rating: 4,
+            text: "Wow2!",
+        }
+    ],
+};
+
 app.get("/", (req, res) => {
-    res.send("Working.");
+    res.json({product: DUMMY_PRODUCT});
 });
 
 
