@@ -7,9 +7,11 @@ const ReviewForm = (props) => {
     const submitReviewHandler = () => {
 
     };
+    const starClickHandler = () => {
+
+    };
 
     return (
-
         <div className="review-form-container">
             <div className = "form-header">
                 What's your rating?
@@ -17,7 +19,7 @@ const ReviewForm = (props) => {
             <div className="form">
                 <div className = "form-rating">
                     <p class = "form-heading">Rating</p>
-                    <Stars></Stars>
+                    <Stars allowInput = {true} onStarClick = {starClickHandler}></Stars>
                 </div>
                 <div className="form-review">
                     <p class = "form-heading">Review</p>
