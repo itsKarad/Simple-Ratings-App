@@ -3,8 +3,8 @@ import Review from './Review';
 const Reviews = (props) => {
     return (
         <div className = "reviews-container">
-            {props.reviews.map((r) => {
-                return (<Review review = {r}></Review>);
+            {props.reviews.map((r, idx) => {
+                return (<Review review = {r} key = {idx}></Review>);
             })}
         </div>
     );

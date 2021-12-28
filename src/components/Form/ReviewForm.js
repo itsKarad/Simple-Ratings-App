@@ -1,14 +1,19 @@
-import React, {useRef} from "react";
+import React, {useRef, useState} from "react";
 import './ReviewForm.css';
 import Stars from "../Stars";
 
 const ReviewForm = (props) => {
-    const reviewRef = useRef("");
-    const submitReviewHandler = () => {
-
+    const reviewTextRef = useRef("");
+    const [reviewRating, setReviewRating] = useState(2);
+    const submitReviewHandler = (e) => {
+        e.preventDefault();
+        props.onSubmit({
+            text: reviewTextRef.current.value,
+            rating: reviewRating
+        });
     };
-    const starClickHandler = () => {
-
+    const starClickHandler = (val) => {
+        setReviewRating(val);
     };
 
     return (
@@ -18,20 +23,20 @@ const ReviewForm = (props) => {
             </div>
             <div className="form">
                 <div className = "form-rating">
-                    <p class = "form-heading">Rating</p>
+                    <p className = "form-heading">Rating</p>
                     <Stars allowInput = {true} onStarClick = {starClickHandler}></Stars>
                 </div>
                 <div className="form-review">
-                    <p class = "form-heading">Review</p>
+                    <p className = "form-heading">Review</p>
                     <div className = "form-review-container">
                         <textarea 
-                            ref = {reviewRef} 
+                            ref = {reviewTextRef} 
                             placeholder = "Start typing..."
                         ></textarea>
                     </div>
                 </div>
             </div>
-            <div class = "form-actions">
+            <div className = "form-actions">
                 <button className = "btn" onClick = {submitReviewHandler}>Submit Review</button>
             </div>
         </div>

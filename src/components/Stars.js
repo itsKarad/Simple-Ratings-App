@@ -12,7 +12,7 @@ const Stars = (props) => {
         }
         // Let the parent know
         props.onStarClick(val);
-        console.log(val);
+        //console.log(val);
         setRating(val);
     };
 

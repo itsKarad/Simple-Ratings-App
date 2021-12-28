@@ -40,12 +40,17 @@ const ProductReviewSection = (props) => {
     const toggleReviewFormHandler = () => {
         const previousVal = showReviewForm;
         setShowReviewForm(!previousVal);
+    };
+    const submitFormHandler = (review) => {
+        console.log(review);
+        DUMMY_PRODUCT.reviews.push(review);
+        toggleReviewFormHandler();
     }
     return (
         <React.Fragment>
-            <Modal show = {showReviewForm} onCancel = {toggleReviewFormHandler}></Modal>
+            <Modal show = {showReviewForm} onSubmit = {submitFormHandler} onCancel = {toggleReviewFormHandler}></Modal>
             <div className="product-item">
-                <div class = "product-info">
+                <div className = "product-info">
                     <h1 className = "product-title">{DUMMY_PRODUCT.title}</h1>
                 </div>
                 <div className = "product-ratings">
@@ -54,15 +59,15 @@ const ProductReviewSection = (props) => {
                     </div>            
                     <div className = "product-rating-form">
                         <div className = "product-actions">
-                            <button class = "btn" onClick = {toggleReviewFormHandler}>Add review</button>
+                            <button className = "btn" onClick = {toggleReviewFormHandler}>Add review</button>
                         </div>
                     </div>
                     
                 </div>
                 <div className = "divider">
                 </div>
-                <div class = "product-reviews">
-                    <h2 class = "reviews-header">Reviews</h2>
+                <div className = "product-reviews">
+                    <h2 className = "reviews-header">Reviews</h2>
                     <Reviews reviews = {DUMMY_PRODUCT.reviews}></Reviews>
                 </div>
             </div>

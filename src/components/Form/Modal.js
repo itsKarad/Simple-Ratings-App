@@ -15,7 +15,7 @@ const Backdrop = (props) => {
 const ModalOverlay = (props) => {
     return (
         <div className = "modal">
-            <ReviewForm></ReviewForm>
+            <ReviewForm onSubmit = {props.onSubmit}></ReviewForm>
         </div>
         
     );
@@ -34,7 +34,7 @@ const Modal = (props) => {
         {
             props.show &&
             ReactDOM.createPortal(
-                <ModalOverlay></ModalOverlay>,
+                <ModalOverlay onSubmit = {props.onSubmit}></ModalOverlay>,
                 document.getElementById("overlay-root")
             )
         }
