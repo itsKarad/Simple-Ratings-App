@@ -4,7 +4,7 @@ import Stars from "../Stars";
 
 const ReviewForm = (props) => {
     const reviewTextRef = useRef("");
-    const [reviewRating, setReviewRating] = useState(2);
+    const [reviewRating, setReviewRating] = useState(0);
     const submitReviewHandler = (e) => {
         e.preventDefault();
         props.onSubmit({
@@ -24,7 +24,7 @@ const ReviewForm = (props) => {
             <div className={styles["form"]}>
                 <div className = {styles["form-rating"]}>
                     <p className = {styles["form-heading"]}>Rating</p>
-                    <Stars allowInput = {true} onStarClick = {starClickHandler}></Stars>
+                    <Stars allowInput = {true} onStarClick = {starClickHandler} rating = {0}></Stars>
                 </div>
                 <div className={styles["form-review"]}>
                     <p className = {styles["form-heading"]}>Review</p>
