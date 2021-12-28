@@ -37,7 +37,7 @@ const ProductReviewSection = (props) => {
     return (
         <div className="product-item">
             <div class = "product-info">
-                <h1 className = "product-title">DUMMY_PRODUCT.title</h1>
+                <h1 className = "product-title">{DUMMY_PRODUCT.title}</h1>
             </div>
             <div className = "product-ratings">
                 <div className = "product-rating">
