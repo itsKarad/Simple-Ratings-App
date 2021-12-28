@@ -3,29 +3,30 @@ import Modal from './Form/Modal';
 import './ProductReviewSection.css';
 import Review from './Review';
 import Reviews from './Reviews';
-
+const DUMMY_REVIEW = {
+    rating: 4,
+    text: "Very good!",
+};
+const DUMMY_PRODUCT = {
+    title: "The Minimalist Entrepreneur",
+    reviews: [
+        {
+            rating: 4,
+            text: "Very good",
+        },
+        {
+            rating: 1,
+            text: "Meh!",
+        },
+        {
+            rating: 4,
+            text: "Wow!",
+        }
+    ],
+};
 const ProductReviewSection = (props) => {
-    const DUMMY_REVIEW = {
-        rating: 4,
-        text: "Very good!",
-    };
-    const DUMMY_PRODUCT = {
-        title: "The Minimalist Entrepreneur",
-        reviews: [
-            {
-                rating: 4,
-                text: "Very good",
-            },
-            {
-                rating: 1,
-                text: "Meh!",
-            },
-            {
-                rating: 4,
-                text: "Wow!",
-            }
-        ],
-    };
+    const [product, setProduct] = useState(DUMMY_PRODUCT);
+    
     const calculateAverageRating = (reviews) => {
         let sumOfRating = 0;
         let numberOfReviews = 0;
@@ -43,7 +44,9 @@ const ProductReviewSection = (props) => {
     };
     const submitFormHandler = (review) => {
         console.log(review);
-        DUMMY_PRODUCT.reviews.push(review);
+        const previousProduct = product;
+        previousProduct.reviews.push(review);
+        setProduct(previousProduct);
         toggleReviewFormHandler();
     }
     return (
@@ -51,11 +54,11 @@ const ProductReviewSection = (props) => {
             <Modal show = {showReviewForm} onSubmit = {submitFormHandler} onCancel = {toggleReviewFormHandler}></Modal>
             <div className="product-item">
                 <div className = "product-info">
-                    <h1 className = "product-title">{DUMMY_PRODUCT.title}</h1>
+                    <h1 className = "product-title">{product.title}</h1>
                 </div>
                 <div className = "product-ratings">
                     <div className = "product-rating">
-                        {calculateAverageRating(DUMMY_PRODUCT.reviews)}
+                        {calculateAverageRating(product.reviews)}
                     </div>            
                     <div className = "product-rating-form">
                         <div className = "product-actions">
@@ -68,7 +71,7 @@ const ProductReviewSection = (props) => {
                 </div>
                 <div className = "product-reviews">
                     <h2 className = "reviews-header">Reviews</h2>
-                    <Reviews reviews = {DUMMY_PRODUCT.reviews}></Reviews>
+                    <Reviews reviews = {product.reviews}></Reviews>
                 </div>
             </div>
         </React.Fragment>
