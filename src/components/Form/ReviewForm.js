@@ -37,7 +37,7 @@ const ReviewForm = (props) => {
                 </div>
             </div>
             <div className = {styles["form-actions"]}>
-                <button className = {styles["btn"]} onClick = {submitReviewHandler}>Submit Review</button>
+                <button className = {styles["btn"]} onClick = {submitReviewHandler}>Submit review</button>
             </div>
         </div>
     );
