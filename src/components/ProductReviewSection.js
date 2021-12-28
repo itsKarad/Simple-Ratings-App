@@ -1,6 +1,7 @@
 import React from 'react';
 import './ProductReviewSection.css';
 import Review from './Review';
+import Reviews from './Reviews';
 
 const ProductReviewSection = (props) => {
     const DUMMY_REVIEW = {
@@ -54,7 +55,7 @@ const ProductReviewSection = (props) => {
             </div>
             <div class = "product-reviews">
                 <h2 class = "reviews-header">Reviews</h2>
-                <Review review = {DUMMY_REVIEW}></Review>
+                <Reviews reviews = {DUMMY_PRODUCT.reviews}></Reviews>
             </div>
         </div>
     )
